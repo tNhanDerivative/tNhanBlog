@@ -1,0 +1,28 @@
+<html lang="en">
+<html>
+<%- include('../partials/header.ejs') %>
+
+<body>
+    <h1>Task detail</h1>
+    <h2><%= task.title %></h2>
+    <p><%= task.body %></p>
+    <a id="trashcan" data-doc="<%= task._id %>">Don't click here</a>
+
+    <%- include('../partials/footer.ejs') %>
+
+    <script>
+    const trashcan = document.getElementById("trashcan");
+    trashcan.addEventListener('click',(e)=>{
+        const endpoint = `/allTask/${trashcan.dataset.doc}`; //ES6 template string
+        fetch(endpoint, {method: 'DELETE'})
+        .then((res) => res.json())
+        .then((data) => window.location.href = data.redirect)
+        .catch(err => console.log(err));
+    })
+
+    </script>
+
+   
+</body>
+
+</html>

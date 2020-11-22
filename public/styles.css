@@ -1,0 +1,76 @@
+.allTask a{
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 6px solid #4CAF50;
+}
+.allTask a:hover h3{
+  color: #4CAF50;
+}
+
+#delete{
+  position: absolute;
+  top: 200px;
+  right: 800px;
+  padding: 100px crimson;
+  border: 10px crimson;
+  color: crimson;
+  background-color: bisque
+}
+#delete:hover{
+  color: #4CAF50;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  text-transform: uppercase;
+}
+nav ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+nav li{
+  list-style-type: none;
+  margin-left: 20px;
+}
+nav h1{
+  font-size: 3em;
+}
+nav p, nav a{
+  color: #777;
+  font-weight: 300;
+}
+
+/* 
+nav{
+  right: 20px
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 120px;
+}
+nav ul{
+  display: flex;
+  align-items: center;
+}
+nav li{
+  margin-left: 20px;
+}
+nav li a{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
+} */
+
+.btn{
+  border-radius: 36px;
+  background: #FEE996;
+}

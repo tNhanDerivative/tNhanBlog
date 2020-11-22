@@ -1,0 +1,17 @@
+POST http://localhost:3000/signup
+content-type: application/json
+
+{
+    "email": "tnhanDerivative@zohomail.com",
+    "password": "password"
+}
+
+###
+POST http://localhost:3000/login
+content-type: application/json
+
+{
+    "email": "tnhanDerivative@zohomail.com",
+    "password": "password"
+}
+

@@ -1,0 +1,26 @@
+<html lang="en">
+<html>
+
+<%- include('../partials/header.ejs') %>
+<body>
+    <h1>All task</h1>
+    <p>Click on task for more details</p>
+    
+    <div class="allTask">
+        <% if(user.tasks.length > 0) { %>
+
+        <% user.tasks.forEach( task => { %>
+        <a href="/allTask/<%= task._id %>">
+        <h3><%= task.title %></h3>
+        <p><%= task.snipet %></p>
+        </a>
+        <% })%>
+        <% } %>
+    </div>
+
+    <a id="create-button" href="/allTask/create">DON'T CLICK HERE</a>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    
+    <%-include('./partials/header.ejs')%>
+    <body>
+        <h1>Sales Price Calculator</h1>
+        
+        <form>
+            <p>How much money spend on Production?</p>
+            <p>$<input id="buyPrice" type="text" placeholder="Spend"></p>
+            <p>What type of this product</p>
+            <select id="profitType">
+                <option disabled selected value="0">--Choose Quality--</option>
+                <option value="0.5">High quality</option>
+                <option value="0.3">Good quality</option>
+                <option value="0.15">Competitive</option>
+            </select>
+        </form>
+        <button id="calculate" type="button">Calculate!</button>
+        
+    <div id="priceDisplay">
+        <h3>SALES PRICE IS:</h3>
+        <sup>$</sup><span id="salePrice">0.00</span>
+    </div>
+    
+    <script src="/calPrice.js"></script>
+    <%- include('./partials/footer.ejs') %>
+    
+    
+</body>
+
+</html>
