@@ -36,11 +36,26 @@ const userSchema = new Schema({
 
 
 
-userSchema.pre('save', async function (next) {
-    const salt = await bcrypt.genSalt();
-    this.password = await bcrypt.hash(this.password, salt);
-    next();
+userSchema.pre('save', function(next) {
+    const user = this;
+    const saltRounds = 10;
+    // only hash the password if it has been modified (or is new)
+    if (!user.isModified('password')) return next();
+
+    // generate a salt
+    bcrypt.genSalt(saltRounds, function(err, salt) {
+        if (err) return next(err);
+
+        // hash the password using our new salt
+        bcrypt.hash(user.password, salt, function(err, hash) {
+            if (err) return next(err);
+            // override the cleartext password with the hashed one
+            user.password = hash;
+            next();
+        });
+    });
 });
+
 userSchema.statics.login = async function (email, password) {
     const user = await this.findOne({
         email
